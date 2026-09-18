@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio
 
-## Getting Started
+Portfolio personnel construit avec [Next.js](https://nextjs.org), exporté en site statique et déployé automatiquement sur GitHub Pages via GitHub Actions.
 
-First, run the development server:
+## Personnaliser le contenu
+
+Toutes les informations (nom, bio, compétences, expériences, formations, projets, liens de contact) se trouvent dans [app/data.ts](app/data.ts). Modifiez ce fichier pour mettre à jour le site — aucune autre modification n'est nécessaire pour changer le contenu.
+
+## Développement local
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ouvrez [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build statique
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+Génère le site statique dans le dossier `out/`.
 
-To learn more about Next.js, take a look at the following resources:
+## Déploiement sur GitHub Pages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Créez un dépôt GitHub (public) et poussez ce projet dessus.
+2. Dans les paramètres du dépôt : **Settings → Pages → Build and deployment → Source**, sélectionnez **GitHub Actions**.
+3. À chaque push sur `main`, le workflow [.github/workflows/deploy.yml](.github/workflows/deploy.yml) construit le site et le déploie automatiquement.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Le site sera accessible à `https://<votre-nom-utilisateur>.github.io/<nom-du-depot>/` (ou `https://<votre-nom-utilisateur>.github.io/` si le dépôt s'appelle `<votre-nom-utilisateur>.github.io`).
