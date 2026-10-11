@@ -1,29 +1,29 @@
 import { profile } from "../data";
+import SectionHeader from "./SectionHeader";
 
 export default function Contact() {
   return (
-    <section id="contact" className="mx-auto max-w-4xl px-6 py-16">
-      <h2 className="text-2xl font-bold tracking-tight">Contact</h2>
-      <p className="mt-4 max-w-xl leading-relaxed text-slate-700 dark:text-slate-300">
-        N&apos;hésitez pas à me contacter pour toute opportunité, question ou
-        simplement pour échanger.
-      </p>
-      <div className="mt-6 flex flex-wrap gap-4 text-sm font-medium">
+    <section id="contact" className="mx-auto max-w-[1200px] px-6 py-16">
+      <SectionHeader
+        title="Contact"
+        description="N'hésitez pas à me contacter pour toute opportunité ou question"
+      />
+      <div className="flex flex-wrap gap-4">
         <a
           href={`mailto:${profile.email}`}
-          className="rounded-full bg-slate-900 px-5 py-2.5 text-white transition hover:bg-slate-700 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
+          className="rounded-buttons bg-charcoal px-4 py-[7px] text-[14px] font-medium text-paper shadow-btn transition hover:opacity-90"
         >
           {profile.email}
         </a>
         <a
           href={profile.github}
-          className="rounded-full border border-slate-300 px-5 py-2.5 transition hover:border-slate-400 dark:border-slate-700 dark:hover:border-slate-500"
+          className="rounded-buttons border border-hairline bg-paper px-4 py-[7px] text-[14px] font-medium text-ink transition hover:border-ink"
         >
           GitHub
         </a>
         <a
           href={profile.linkedin}
-          className="rounded-full border border-slate-300 px-5 py-2.5 transition hover:border-slate-400 dark:border-slate-700 dark:hover:border-slate-500"
+          className="rounded-buttons border border-hairline bg-paper px-4 py-[7px] text-[14px] font-medium text-ink transition hover:border-ink"
         >
           LinkedIn
         </a>

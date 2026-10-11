@@ -1,36 +1,42 @@
 import { education, experience, type ExperienceItem } from "../data";
+import SectionHeader from "./SectionHeader";
 
 function Timeline({ items }: { items: ExperienceItem[] }) {
   return (
-    <ol className="mt-4 space-y-6 border-l border-slate-200 pl-6 dark:border-slate-800">
+    <div className="grid gap-4 sm:grid-cols-2">
       {items.map((item) => (
-        <li key={`${item.role}-${item.organization}`}>
-          <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-            <h3 className="font-semibold">{item.role}</h3>
-            <span className="text-sm text-slate-500 dark:text-slate-400">
+        <div
+          key={`${item.role}-${item.organization}`}
+          className="rounded-cards border border-hairline bg-paper p-4"
+        >
+          <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+            <h3 className="text-[15px] font-medium text-ink">{item.role}</h3>
+            <span className="rounded-tags bg-mist px-2 py-0.5 text-[12px] text-slate">
               {item.period}
             </span>
           </div>
-          <p className="text-sm text-slate-600 dark:text-slate-400">
-            {item.organization}
-          </p>
-          <p className="mt-1 leading-relaxed text-slate-700 dark:text-slate-300">
+          <p className="mt-1 text-[14px] text-slate">{item.organization}</p>
+          <p className="mt-2 text-[14px] leading-[1.43] tracking-[-0.14px] text-ink">
             {item.description}
           </p>
-        </li>
+        </div>
       ))}
-    </ol>
+    </div>
   );
 }
 
 export default function Experience() {
   return (
-    <section id="experience" className="mx-auto max-w-4xl px-6 py-16">
-      <h2 className="text-2xl font-bold tracking-tight">Expérience</h2>
-      <Timeline items={experience} />
+    <section id="experience" className="border-t border-hairline bg-mist/40">
+      <div className="mx-auto max-w-[1200px] px-6 py-16">
+        <SectionHeader title="Expérience" description="Parcours professionnel" />
+        <Timeline items={experience} />
 
-      <h2 className="mt-12 text-2xl font-bold tracking-tight">Formation</h2>
-      <Timeline items={education} />
+        <div className="mt-12">
+          <SectionHeader title="Formation" description="Diplômes et formations" />
+          <Timeline items={education} />
+        </div>
+      </div>
     </section>
   );
 }

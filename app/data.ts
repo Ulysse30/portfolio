@@ -6,12 +6,42 @@ export const profile = {
   title: "Développeur logiciel",
   tagline:
     "Je conçois et développe des applications web robustes, du prototype au déploiement en production.",
+  status: "Ouvert aux opportunités",
   location: "France",
   email: "ulysse.rautureau30@gmail.com",
   github: "https://github.com/",
   linkedin: "https://www.linkedin.com/",
   resumeUrl: "",
 };
+
+export type FocusArea = {
+  title: string;
+  description: string;
+  accent: "iris" | "orchid" | "wine" | "coral" | "lime";
+};
+
+export const focusAreas: FocusArea[] = [
+  {
+    title: "Frontend",
+    description: "Interfaces réactives et accessibles avec React, Next.js et TypeScript.",
+    accent: "iris",
+  },
+  {
+    title: "Backend & API",
+    description: "Services robustes et APIs performantes avec Node.js, Python et SQL.",
+    accent: "wine",
+  },
+  {
+    title: "DevOps",
+    description: "Intégration continue, conteneurs et déploiements automatisés.",
+    accent: "orchid",
+  },
+  {
+    title: "Bonnes pratiques",
+    description: "Code propre, tests et revues de code pour un logiciel durable.",
+    accent: "lime",
+  },
+];
 
 export const about = `Passionné par le développement logiciel, j'aime construire des produits complets,
 de l'architecture backend à l'interface utilisateur. J'accorde une attention particulière
